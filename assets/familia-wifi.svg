@@ -1,60 +1,88 @@
-<svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="520" viewBox="0 0 640 520" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Fibra óptica MCD Telecom conectando uma casa</title>
+  <desc id="desc">Um cabo de fibra luminosa chega a um roteador MCD e distribui o sinal a telas e dispositivos.</desc>
   <defs>
-    <radialGradient id="glow" cx="50%" cy="38%" r="62%">
-      <stop offset="0%" stop-color="#FC8207" stop-opacity="0.16"/>
-      <stop offset="100%" stop-color="#FC8207" stop-opacity="0"/>
+    <radialGradient id="aura" cx="53%" cy="48%" r="54%">
+      <stop stop-color="#6578E5" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#6578E5" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="houseFade" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.16"/>
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.04"/>
+    <linearGradient id="fiber" x1="31" y1="331" x2="262" y2="307" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF8A19" stop-opacity="0"/>
+      <stop offset=".58" stop-color="#FF9D42"/>
+      <stop offset="1" stop-color="#FFE0B6"/>
     </linearGradient>
+    <linearGradient id="routerTop" x1="228" y1="291" x2="413" y2="365" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#CAD3FF"/>
+    </linearGradient>
+    <linearGradient id="routerFace" x1="260" y1="354" x2="393" y2="418" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E5E9FF"/>
+      <stop offset="1" stop-color="#ADB9F5"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="431" y1="142" x2="511" y2="233" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#AEBBFF" stop-opacity=".07"/>
+    </linearGradient>
+    <filter id="softGlow" x="121" y="159" width="410" height="354" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <filter id="routerShadow" x="202" y="287" width="251" height="174" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="15"/>
+    </filter>
   </defs>
 
-  <circle cx="240" cy="180" r="190" fill="url(#glow)"/>
+  <circle cx="340" cy="263" r="248" fill="url(#aura)"/>
+  <circle cx="337" cy="269" r="192" stroke="#AEBBFF" stroke-opacity=".12"/>
+  <circle cx="337" cy="269" r="156" stroke="#AEBBFF" stroke-opacity=".1" stroke-dasharray="2 9"/>
 
-  <g opacity="0.9">
-    <path d="M135 270 L240 185 L345 270 L345 380 L135 380 Z" fill="url(#houseFade)" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="2"/>
-    <rect x="208" y="305" width="64" height="75" rx="4" fill="#FFFFFF" fill-opacity="0.10" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="1.5"/>
-    <rect x="160" y="312" width="30" height="30" rx="3" fill="#FFFFFF" fill-opacity="0.14"/>
-    <rect x="290" y="312" width="30" height="30" rx="3" fill="#FFFFFF" fill-opacity="0.14"/>
+  <!-- The path of the fiber is the visual anchor, instead of stock-style people art. -->
+  <path d="M20 328C95 328 121 283 182 283h67" stroke="#FC8207" stroke-opacity=".16" stroke-width="14" stroke-linecap="round" filter="url(#softGlow)"/>
+  <path d="M20 328C95 328 121 283 182 283h67" stroke="url(#fiber)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M20 337C97 337 125 292 182 292h66" stroke="#FFAF61" stroke-opacity=".56" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="248" cy="283" r="7" fill="#FFF1DF"/>
+  <circle cx="248" cy="283" r="15" stroke="#FC8207" stroke-opacity=".55"/>
+
+  <!-- Connection paths lead from the router to everyday screens. -->
+  <path d="M326 300C329 251 352 223 383 203" stroke="#E5E9FF" stroke-opacity=".36" stroke-width="1.5" stroke-dasharray="4 7"/>
+  <path d="M365 302c32-26 68-37 106-35" stroke="#E5E9FF" stroke-opacity=".3" stroke-width="1.5" stroke-dasharray="4 7"/>
+  <path d="M388 320c43-1 81 15 106 41" stroke="#E5E9FF" stroke-opacity=".25" stroke-width="1.5" stroke-dasharray="4 7"/>
+  <circle cx="383" cy="203" r="3" fill="#FFB565"/>
+  <circle cx="471" cy="267" r="3" fill="#FFB565"/>
+  <circle cx="494" cy="361" r="3" fill="#FFB565"/>
+
+  <!-- Floating screen and mobile outlines, drawn as subtle interface tiles. -->
+  <g>
+    <rect x="371" y="127" width="106" height="82" rx="15" fill="url(#screen)" stroke="#E4E9FF" stroke-opacity=".3"/>
+    <rect x="382" y="138" width="84" height="52" rx="8" stroke="#E4E9FF" stroke-opacity=".32"/>
+    <path d="m410 153 20 11-20 12v-23Z" fill="#FFAC5A"/>
+    <path d="M402 198h44m-22-9v9" stroke="#E4E9FF" stroke-opacity=".44" stroke-linecap="round"/>
+  </g>
+  <g>
+    <rect x="469" y="224" width="53" height="88" rx="12" fill="url(#screen)" stroke="#E4E9FF" stroke-opacity=".38"/>
+    <rect x="479" y="238" width="33" height="55" rx="5" stroke="#E4E9FF" stroke-opacity=".3"/>
+    <circle cx="495.5" cy="302" r="2.5" fill="#E4E9FF" fill-opacity=".68"/>
+    <path d="M487 267c2.5-8 14-8 17 0m-13-3a4 4 0 0 1 8 0m-4 4v7" stroke="#FFB565" stroke-width="1.7" stroke-linecap="round"/>
+  </g>
+  <g>
+    <rect x="485" y="348" width="77" height="61" rx="12" fill="url(#screen)" stroke="#E4E9FF" stroke-opacity=".27"/>
+    <path d="M497 362h53v33h-53z" stroke="#E4E9FF" stroke-opacity=".32"/>
+    <path d="M502 388c7-11 13-6 18-13s9 2 15-5" stroke="#FFAC5A" stroke-width="2" stroke-linecap="round"/>
   </g>
 
-  <g stroke="#FC8207" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.95">
-    <path d="M205 222 A50 50 0 0 1 275 222"/>
-    <path d="M218 238 A30 30 0 0 1 262 238"/>
-  </g>
-  <circle cx="240" cy="252" r="6.5" fill="#FC8207"/>
+  <!-- MCD router: shaped and labeled for this brand. -->
+  <ellipse cx="333" cy="411" rx="99" ry="28" fill="#080F38" fill-opacity=".72" filter="url(#routerShadow)"/>
+  <path d="m250 339 65-32c8-4 18-4 27 0l67 32c9 4 9 11 0 15l-68 31c-9 4-18 4-27 0l-64-31c-9-4-9-10 0-15Z" fill="url(#routerTop)" stroke="#FFF" stroke-opacity=".82" stroke-width="1.5"/>
+  <path d="M246 349v26c0 4 3 8 8 10l60 29c9 4 19 4 28 0l66-30c5-2 8-6 8-11v-25l-72 34c-9 4-19 4-28 0l-70-33Z" fill="url(#routerFace)" stroke="#FFF" stroke-opacity=".34"/>
+  <path d="m267 339 53-25c5-2 11-2 16 0l51 25-53 25c-5 3-11 3-16 0l-51-25Z" fill="#E9EDFF"/>
+  <path d="M303 337c2-5 8-8 14-8m-10 13c3-4 7-5 10-5m-6 10c2-2 4-3 6-3" stroke="#344394" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="318" cy="347" r="2" fill="#FC8207"/>
+  <text x="337" y="346" fill="#263477" font-family="Arial,sans-serif" font-size="12" font-style="italic" font-weight="800" letter-spacing=".5">MCD</text>
+  <path d="M348 381v5" stroke="#FC8207" stroke-width="3" stroke-linecap="round"/>
+  <path d="M357 377v5m9-9v5" stroke="#3B4DAB" stroke-opacity=".42" stroke-width="2" stroke-linecap="round"/>
 
-  <g transform="translate(240,255)">
-    <g transform="translate(-72,58)">
-      <circle cx="0" cy="-2" r="20" fill="#FFC079"/>
-      <path d="M-26 64 C-26 28 -15 7 0 7 C15 7 26 28 26 64 Z" fill="#FFFFFF" fill-opacity="0.92"/>
-      <path d="M-26 64 C-26 28 -15 7 0 7 C15 7 26 28 26 64 Z" fill="none" stroke="#1E2870" stroke-opacity="0.08" stroke-width="1"/>
-    </g>
-
-    <g transform="translate(0,40)">
-      <circle cx="0" cy="-2" r="24" fill="#F2A26B"/>
-      <path d="M-31 78 C-31 32 -18 8 0 8 C18 8 31 32 31 78 Z" fill="#FC8207"/>
-    </g>
-
-    <g transform="translate(72,62)">
-      <circle cx="0" cy="-2" r="18" fill="#FFD9A8"/>
-      <path d="M-23 58 C-23 25 -13 6 0 6 C13 6 23 25 23 58 Z" fill="#1E2870"/>
-    </g>
-
-    <g transform="translate(116,78)">
-      <circle cx="0" cy="-2" r="14" fill="#F2A26B"/>
-      <path d="M-18 46 C-18 20 -10 5 0 5 C10 5 18 20 18 46 Z" fill="#FFFFFF" fill-opacity="0.92"/>
-    </g>
-  </g>
-
-  <g fill="#1FA463">
-    <circle cx="110" cy="120" r="4"/>
-    <circle cx="372" cy="150" r="3.2"/>
-    <circle cx="346" cy="96" r="3"/>
-  </g>
-  <g stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="1.4" fill="none">
-    <path d="M95 130 q15 -10 30 0"/>
-    <path d="M357 160 q15 -8 28 0"/>
-  </g>
+  <!-- A quiet house silhouette gives the network a real destination. -->
+  <path d="m177 220 51-42 42 34" stroke="#D5DCFF" stroke-opacity=".22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M188 213v46h30v-27h22v26h19v-51" stroke="#D5DCFF" stroke-opacity=".18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="197" y="223" width="12" height="11" rx="2" fill="#D5DCFF" fill-opacity=".15"/>
+  <rect x="240" y="221" width="10" height="14" rx="2" fill="#FC8207" fill-opacity=".56"/>
 </svg>
